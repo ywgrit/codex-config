@@ -43,6 +43,26 @@ After bootstrap:
 - other Codex homes link their `AGENTS.md`, `config.toml`, and `rules/` back to the canonical files
 - the repo path is inferred from the location of `scripts/bootstrap.sh`, so the clone destination is your choice
 
+## Update An Existing Machine
+
+For machines that already cloned this repo, use:
+
+```bash
+./scripts/update.sh
+```
+
+`update.sh` is the standard sync command for existing clones:
+
+- it aborts when the local repository has uncommitted changes
+- it runs `git pull --ff-only`
+- it reruns `scripts/bootstrap.sh`
+
+You can forward bootstrap arguments through it:
+
+```bash
+./scripts/update.sh --home "$HOME/.codex" --home "$HOME/.codex-163"
+```
+
 ## Bootstrap Options
 
 By default, the bootstrap script:
@@ -78,7 +98,7 @@ cd <where-you-cloned-codex-config>
 ./scripts/bootstrap.sh
 git status
 git add <changed-files>
-git commit -m "<message>"
+git commit -m "<title>" -m "<detailed body: what changed, why, verification>"
 # ask for confirmation before running git push
 ```
 
