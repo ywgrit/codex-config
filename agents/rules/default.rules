@@ -1,0 +1,4 @@
+prefix_rule(pattern=["/usr/bin/zsh", "-lc", "TERM=xterm-ghostty tmux -L termcheck new -d -s badcase; echo ghostty_exit:$?; TERM=xterm-256color tmux -L termcheck2 new -d -s goodcase; echo xterm_exit:$?; tmux -L termcheck2 ls 2>/dev/null"], decision="allow")
+prefix_rule(pattern=["/usr/bin/zsh", "-lc", "ls -lh /home/wx/.triton/llvm/llvm-278dba37-ubuntu-x64.tar.gz 2>/dev/null || true; stat -c '%s bytes, mtime=%y' /home/wx/.triton/llvm/llvm-278dba37-ubuntu-x64.tar.gz 2>/dev/null || true; ps -o pid,etime,pcpu,pmem,args -p 76881 2>/dev/null || ps -eo pid,etime,pcpu,pmem,args | rg \"aria2c .*llvm-278dba37-ubuntu-x64.tar.gz\""], decision="allow")
+prefix_rule(pattern=["sudo", "apt-get", "update"], decision="allow")
+prefix_rule(pattern=["ps", "-eo", "pid,etime,pcpu,pmem,args"], decision="allow")

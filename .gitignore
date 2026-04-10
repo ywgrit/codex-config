@@ -1,0 +1,15 @@
+# Do not store account/session state in this repo.
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+auth.json
+history.jsonl
+models_cache.json
+
+cache/
+log/
+memories/
+sessions/
+shell_snapshots/
+state_*.sqlite*
+tmp/

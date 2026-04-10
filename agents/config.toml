@@ -1,0 +1,55 @@
+model = "gpt-5.4"
+model_reasoning_effort = "xhigh"
+service_tier = "fast"
+approvals_reviewer = "user"
+
+[projects."/home/wx"]
+trust_level = "trusted"
+
+[projects."/home/wx/Documents/github/compiler"]
+trust_level = "trusted"
+
+[projects."/home/wx/Documents/github/compiler/hgcc"]
+trust_level = "trusted"
+
+[projects."/home/wx/Documents/github/compiler/gcc"]
+trust_level = "trusted"
+
+[projects."/home/wx/Documents/github/compiler/triton"]
+trust_level = "trusted"
+
+[projects."/media/wx/Data/Books/hygon/职称评审/各职称等级参评材料模版"]
+trust_level = "trusted"
+
+[projects."/home/wx/Documents/github/compiler/llvm"]
+trust_level = "trusted"
+
+[projects."/home/wx/Downloads"]
+trust_level = "trusted"
+
+[projects."/home/wx/Downloads/ghostty"]
+trust_level = "trusted"
+
+[projects."/home/wx/Downloads/paper-review"]
+trust_level = "trusted"
+
+[projects."/home/wx/Downloads/garden/garden"]
+trust_level = "trusted"
+
+[projects."/home/wx/Downloads/try/.obsidian"]
+trust_level = "trusted"
+
+[projects."/home/wx/Documents/github/llm"]
+trust_level = "trusted"
+
+[projects."/home/wx/Documents/github/vibe-coding/airead"]
+trust_level = "trusted"
+
+[projects."/home/wx/Downloads/paper-review-yyl"]
+trust_level = "trusted"
+
+[notice.model_migrations]
+"gpt-5.3-codex" = "gpt-5.4"
+
+[plugins."github@openai-curated"]
+enabled = true
