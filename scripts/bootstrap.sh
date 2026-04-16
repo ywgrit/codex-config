@@ -75,12 +75,15 @@ build_target_homes() {
   local -n output_ref="$1"
   local discovered=()
   local path
+  local normalized_path
 
   if [[ ${#MANUAL_HOMES[@]} -gt 0 ]]; then
     output_ref=("${MANUAL_HOMES[@]}")
   else
     for path in "${HOME}"/.codex*; do
       [[ -d "${path}" ]] || continue
+      normalized_path="$(normalize_path "${path}")"
+      [[ "${normalized_path}" == "${REPO_DIR}" ]] && continue
       discovered+=("${path}")
     done
     output_ref=("${discovered[@]}")

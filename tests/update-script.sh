@@ -92,7 +92,26 @@ test_clean_repo_pulls_and_bootstraps() {
   assert_symlink_target "${managed_home}/AGENTS.md" "${clone_repo}/codex/AGENTS.md"
 }
 
+test_bootstrap_ignores_repo_dir_named_codex_config() {
+  local home_dir="${TMP_DIR}/bootstrap-home"
+  local repo_dir="${home_dir}/.codex-config"
+  local output_file="${TMP_DIR}/bootstrap-output.txt"
+
+  create_seed_repo "${repo_dir}"
+
+  (
+    cd "${repo_dir}" &&
+    HOME="${home_dir}" bash ./scripts/bootstrap.sh
+  ) >"${output_file}" 2>&1
+
+  assert_file_contains "${output_file}" "Bootstrap complete."
+  if grep -Fq "${repo_dir}" "${output_file}"; then
+    fail "bootstrap.sh should not manage the repository directory as a Codex home"
+  fi
+}
+
 test_dirty_tree_aborts
 test_clean_repo_pulls_and_bootstraps
+test_bootstrap_ignores_repo_dir_named_codex_config
 
 echo "PASS: update.sh regression coverage"
