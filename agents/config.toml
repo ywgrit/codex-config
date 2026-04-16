@@ -1,6 +1,5 @@
 model = "gpt-5.4"
-model_reasoning_effort = "xhigh"
-service_tier = "fast"
+model_reasoning_effort = "medium"
 approvals_reviewer = "user"
 
 [projects."/home/wx"]
