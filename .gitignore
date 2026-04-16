@@ -13,3 +13,11 @@ sessions/
 shell_snapshots/
 state_*.sqlite*
 tmp/
+
+# Bootstrap-created convenience symlinks at repo root.
+/AGENTS.md
+/config.toml
+/rules
+
+# Transient local artifacts.
+/127.0.0.1:10808
